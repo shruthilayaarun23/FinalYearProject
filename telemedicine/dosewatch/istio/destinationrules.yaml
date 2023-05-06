@@ -1,0 +1,10 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: dose-watch
+  namespace: dose-watch  
+spec:
+  host: dose-watch
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL

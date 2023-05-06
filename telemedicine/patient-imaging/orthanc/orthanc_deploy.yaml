@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # This name uniquely identifies the Deployment
+  name: orthanc
+  namespace: patient-imaging
+spec:  
+  replicas: 1
+  selector:
+    matchLabels:
+      module: orthanc
+  template:
+    metadata:
+      labels:
+        # This label is used as a selector in Service definition
+        module: orthanc
+      annotations:
+        inject.istio.io/templates: "sidecar,spire" 
+    spec:
+      volumes:
+      - name: orthanc-pvc
+        persistentVolumeClaim:
+          claimName: orthanc-pvc            
+      containers:
+      - name: orthanc
+        image: jodogne/orthanc
+        ports:
+        - name: https
+          containerPort: 8042
+        - name: http
+          containerPort: 4242
+        volumeMounts:
+        - mountPath: /var/lib/orthanc/db/
+          name: orthanc-pvc

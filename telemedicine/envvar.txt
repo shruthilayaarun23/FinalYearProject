@@ -1,0 +1,5 @@
+set POSTGRES_HOST=localhost
+set POSTGRES_DB=patient_details
+set POSTGRES_USER=postgres
+set POSTGRES_PASSWORD=scorose23
+set POSTGRES_PORT=5432

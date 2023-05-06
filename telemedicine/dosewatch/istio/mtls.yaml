@@ -1,0 +1,8 @@
+apiVersion: "security.istio.io/v1beta1"
+kind: "PeerAuthentication"
+metadata:
+  name: dosewatch-mtls
+  namespace: dose-watch
+spec:
+  mtls:
+    mode: STRICT

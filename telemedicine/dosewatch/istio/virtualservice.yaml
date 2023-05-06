@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: dose-watch
+  namespace: dose-watch
+spec:
+  hosts:
+  - "127.0.0.1.dw.sslip.io"
+  gateways:
+  - dose-watch
+  http:
+  - match:
+    - uri:
+        prefix: /dose-watch
+    route:
+    - destination:
+        host: dose-watch
+        port:
+          number: 5001

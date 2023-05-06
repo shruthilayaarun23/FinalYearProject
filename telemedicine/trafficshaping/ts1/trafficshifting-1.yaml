@@ -1,0 +1,25 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: telemedicinebff-ts1
+  namespace: telemedicinebff
+spec:
+  hosts:
+  - telemedicinebff
+  http:
+  - match:
+    - uri:
+        prefix: "/combined_data"  
+    route:
+    - destination:
+        host: telemedicinebff
+        subset: v1
+      weight: 80
+    - destination:
+        host: telemedicinebff
+        subset: v2
+      weight: 10
+    - destination:
+        host: telemedicinebff
+        subset: v3
+      weight: 10

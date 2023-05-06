@@ -1,0 +1,3 @@
+curl -s -X POST $1/processor/calculate?verbosity=1 -H 'Content-Type: application/json' -d '{
+    "x1": "2 + 3"
+}' | jq '.results[] | "version=\(.version) expr=\(.expr) result=\(.result)"'

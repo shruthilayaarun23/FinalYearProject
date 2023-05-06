@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: patientimaging-certs
+  namespace: istio-system
+spec:
+  secretName: patientimaging-certs
+  duration: 1440h
+  renewBefore: 360h
+  commonName: 127.0.0.1.pi.sslip.io
+  isCA: false
+  usages:
+    - digital signature
+    - key encipherment
+    - cert sign
+  dnsNames:
+    - 127.0.0.1.pi.sslip.io
+  issuerRef:
+    name: selfsigned-ca
+    kind: ClusterIssuer
+    group: cert-manager.io

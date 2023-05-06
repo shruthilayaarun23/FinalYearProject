@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: patient-details
+  name: patient-details
+  namespace: patient-details
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: patient-details
+  template:
+    metadata:
+      labels:
+        app: patient-details
+      annotations:
+        inject.istio.io/templates: "sidecar,spire" 
+    spec:
+      containers:
+      - image: shruthiarun23/patient-details
+        name: patient-details
+        env:
+        - name: POSTGRES_DB
+          valueFrom:
+            configMapKeyRef:
+              name: db-secret-credentials
+              key: POSTGRES_DB
+        - name: POSTGRES_USER
+          valueFrom:
+            configMapKeyRef:
+              name: db-secret-credentials
+              key: POSTGRES_USER
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: db-secret-credentials
+              key: POSTGRES_PASSWORD
+        - name: POSTGRES_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: db-secret-credentials
+              key: POSTGRES_PORT
+        - name: POSTGRES_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: db-secret-credentials
+              key: POSTGRES_HOST
+

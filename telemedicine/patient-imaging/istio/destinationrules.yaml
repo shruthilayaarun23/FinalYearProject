@@ -1,0 +1,10 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: patient-imaging
+  namespace: patient-imaging 
+spec:
+  host: patient-imaging
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL

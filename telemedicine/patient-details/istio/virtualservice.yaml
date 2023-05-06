@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: patient-details
+  namespace: patient-details
+spec:
+  hosts:
+  - "127.0.0.1.pd.sslip.io"
+  gateways:
+  - patient-details
+  http:
+  - match:
+    - uri:
+        prefix: /patient-details
+    route:
+    - destination:
+        host: patient-details
+        port:
+          number: 5001

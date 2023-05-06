@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: telemedicineapp
+  name: telemedicineapp
+  namespace: telemedicineapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: telemedicineapp
+  template:
+    metadata:
+      labels:
+        app: telemedicineapp
+      annotations:
+        inject.istio.io/templates: "sidecar,spire"        
+    spec:
+      containers:
+      - image: shruthiarun23/telemedicine
+        name: telemedicine

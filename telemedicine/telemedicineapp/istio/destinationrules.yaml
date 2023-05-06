@@ -1,0 +1,10 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: telemedicineapp
+  namespace: telemedicineapp  
+spec:
+  host: telemedicineapp
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL

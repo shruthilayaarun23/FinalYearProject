@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../static/main.css">
+    <title>
+        Medicine Information
+    </title>
+</head>
+
+
+<body>
+    <h3
+    class="icon-bar"
+    style="text-align: center;">    
+    Anna Hospitals    
+</h3><br>
+        
+
+        <div class="br" >
+
+
+            <form class="fr1" action="/patient-details/create" method="post">
+
+                <h3>
+                    Create a record
+                </h3>
+                
+                <label for="Name" class="lb">Name</label>
+                <input type="text" id="Name" name="Name" placeholder="Enter patient Name..."><br><br>
+                
+                <label for="age" class="lb">Age</label>
+                <input type="Number" id="age" name="age" placeholder="Enter patient age..."><br><br>
+
+                <label for="sex" class="lb">Sex</label>
+                <input type="text" id="sex" name="sex" placeholder="Enter patient sex (m/f/o)..."><br><br>
+
+                <label for="contact" class="lb">Contact</label>
+                <input type="text" id="contact" name="contact" placeholder="Enter patient contact number..."><br><br>
+
+                <label for="address" class="lb">Address</label>
+                <input type="text" id="address" name="address" placeholder="Enter Permanent address..."><br><br>
+
+                <label for="I_id" class="lb">Insurance Id</label>
+                <input type="text" id="I_id" name="I_id" placeholder="Enter Insurance Id..."><br><br>
+
+                <label for="Studyid" class="lb">Study Id</label>
+                <input type="text" id="Studyid" name="Studyid" placeholder="Enter Study Id..."><br><br>
+
+
+            
+
+                <input class="bt" 
+                    type="submit"
+                    id="submit"
+                    value="submit"><br>
+                
+            </form>
+
+        </div>
+
+ 
+
+        
+<h3 class="icon-bar">{{ info }}</h3>
+    
+
+</body>
+</html>

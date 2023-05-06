@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../static/main.css"/>
+    <title>
+        Medicine Information
+    </title>
+</head>
+
+
+
+<body>
+    <h1
+    class="icon-bar">
+
+        Dose Watch
+
+    </h1>
+
+        <div>
+
+            <form action="/dose-watch/read" class="fr" method="post">
+
+                <h3>
+                    Enter Patient Id to display records 
+                </h3><br>
+
+                <label for="p_id" class="lb">p_id</label>
+                <input type="text" id="p_id" name="p_id" placeholder="Enter patient Id here..."><br><br>
+
+
+                <input 
+                    class="bt"            
+                    id="submit" 
+                    value="Submit"
+                    type="submit"><br>
+
+
+            </form>
+
+
+            <h2>{{info}}</h2>
+
+                
+                
+
+            
+            
+
+        </div>
+
+
+        
+
+
+</body>
+
+
+</html>
+

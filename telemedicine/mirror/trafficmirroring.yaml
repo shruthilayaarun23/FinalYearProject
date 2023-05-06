@@ -1,0 +1,17 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: telemedicinebff-mirror
+  namespace: telemedicinebff
+spec:
+  hosts:
+    - telemedicinebff
+  http:
+  - route:
+    - destination:
+        host: telemedicinebff
+        subset: v1
+      weight: 100
+    mirror:
+      host: telemedicine
+      subset: v2

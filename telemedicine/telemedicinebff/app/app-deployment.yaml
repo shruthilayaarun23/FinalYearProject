@@ -1,0 +1,83 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: telemedicinebff
+  name: telemedicinebff-v1
+  namespace: telemedicinebff
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: telemedicinebff
+  template:
+    metadata:
+      labels:
+        app: telemedicinebff
+        version: v1
+      annotations:
+        inject.istio.io/templates: "sidecar,spire"        
+    spec:
+      containers:
+      - image: shruthiarun23/telemedicinebff
+        name: telemedicinebff
+        env:
+        - name: VERSION
+          value: "v1"        
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: telemedicinebff
+  name: telemedicinebff-v2
+  namespace: telemedicinebff
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: telemedicinebff
+  template:
+    metadata:
+      labels:
+        app: telemedicinebff
+        version: v2
+      annotations:
+        inject.istio.io/templates: "sidecar,spire"        
+    spec:
+      containers:
+      - image: shruthiarun23/telemedicinebff
+        name: telemedicinebff
+        env:
+        - name: VERSION
+          value: "v2"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: telemedicinebff
+  name: telemedicinebff-v3
+  namespace: telemedicinebff
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: telemedicinebff
+  template:
+    metadata:
+      labels:
+        app: telemedicinebff
+        version: v3
+      annotations:
+        inject.istio.io/templates: "sidecar,spire"        
+    spec:
+      containers:
+      - image: shruthiarun23/telemedicinebff
+        name: telemedicinebff
+        env:
+        - name: VERSION
+          value: "v3"                

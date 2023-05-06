@@ -1,0 +1,104 @@
+body {
+    background: url('med.jpeg');
+    background-repeat: no-repeat;
+    background-size:cover ;
+}
+  
+
+.icon-bar {
+    width: 100%; 
+    background-color:snow; 
+    opacity: 0.9;
+    font-size: 45px;
+    margin-bottom: 0%;
+}
+
+.lb{
+    display: flex;
+    
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+input{
+    width: 300px;
+}
+
+
+
+
+.bt{
+    align-items: center;
+    text-align: center;
+    background-color: deepskyblue;
+
+}
+
+.d{
+    text-align: center;
+}
+
+
+
+
+
+input{
+    width: 200px;
+}
+
+h3,h2,h1{
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+.br{
+    margin-right: 80%;
+}
+
+.fr{
+    background-color: snow;
+    opacity: 0.9;
+    margin-right: 35%;
+    margin-left: 35%;
+    text-align: center;
+    
+}
+
+.fr1{
+
+
+border: double 3px ;
+background-color: rgb(95, 190, 224);
+text-align: left;
+width: fit-content;
+padding: 0%
+}
+
+#forms{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#forms .fr {
+    height: 100px;
+    margin: 20px;
+    width: 45% ;
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+}
+
+#forms .fr button{
+    height: 100%;
+    margin: 0%;
+    width: 82% ;
+    font-size: xx-large;
+}
+

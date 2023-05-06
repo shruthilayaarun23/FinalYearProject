@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: telemedicinebff-certs
+  namespace: istio-system
+spec:
+  secretName: telemedicinebff-certs
+  duration: 1440h
+  renewBefore: 360h
+  commonName: 127.0.0.1.tm.sslip.io
+  isCA: false
+  usages:
+    - digital signature
+    - key encipherment
+    - cert sign
+  dnsNames:
+    - 127.0.0.1.tm.sslip.io
+  issuerRef:
+    name: selfsigned-ca
+    kind: ClusterIssuer
+    group: cert-manager.io

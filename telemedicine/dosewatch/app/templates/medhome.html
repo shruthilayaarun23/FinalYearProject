@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../static/main.css"/>
+    <title>
+        Medicine Information
+    </title>
+</head>
+
+
+<body>
+    <h1
+    class="icon-bar">    
+        MEDICINE AND DOSAGE
+    </h1>
+        <h2
+        class="icon-bar"
+        ></h2>
+
+        <div class="br" >
+
+
+            <form class="fr1" action="/dose-watch/create" method="post">
+
+                <h3>
+                    Create a record
+                </h3>
+                
+
+                <label for="p_id" class="lb">Patient ID</label><br>
+                <input type="number" id="p_id" name="p_id" placeholder="Enter Patient ID here..."><br><br>
+                
+                <label for="Name" class="lb">Name</label><br>
+                <input type="text" id="Name" name="Name" placeholder="Enter patient Name..."><br><br>
+                
+                <label for="doctor_name" class="lb">Doctor name</label><br>
+                <input type="text" id="doctor_name" name="doctor_name" placeholder="Enter doctor name..."><br><br>
+
+                <label for="disease" class="lb">Disease</label><br>
+                <input type="text" id="disease" name="disease" placeholder="Enter patient disease..."><br><br>
+
+                <label for="prescribed_med" class="lb">Prescribed Medications</label><br>
+                <input type="text" id="prescribed_med" name="prescribed_med" placeholder="Enter Medications..."><br><br>
+
+                <label for="dosage" class="lb">Dosage</label><br>
+                <input type="text" id="dosage" name="dosage" placeholder="Enter dosage..."><br><br>
+
+                <label for="duration_med" class="lb">Duration of medicine</label><br>
+                <input type="text" id="duration_med" name="duration_med" placeholder="Enter duration of medication..."><br><br>
+
+                <input class="bt" 
+                    type="submit"
+                    id="submit"
+                    value="submit"><br>
+                
+            </form>
+
+        </div>
+
+ 
+
+        
+<h2 class="icon-bar">{{ info }}</h2>
+    
+
+</body>
+</html>
